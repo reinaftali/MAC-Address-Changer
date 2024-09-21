@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import re
 import subprocess
 import optparse
@@ -27,7 +29,24 @@ def get_current_mac(interface):
     else:
         print("[-] Could not read MAC address.")
 
+ascii_art = '''
 
+  __  __          _____               _     _                   
+ |  \/  |   /\   / ____|     /\      | |   | |                  
+ | \  / |  /  \ | |         /  \   __| | __| |_ __ ___  ___ ___ 
+ | |\/| | / /\ \| |        / /\ \ / _` |/ _` | '__/ _ \/ __/ __|
+ | |  | |/ ____ \ |____   / ____ \ (_| | (_| | | |  __/\__ \__ \\
+ |_|  |_/_/ ___\_\_____| /_/    \_\__,_|\__,_|_|  \___||___/___/
+           / ____| |                                            
+          | |    | |__   __ _ _ __   __ _  ___ _ __             
+          | |    | '_ \ / _` | '_ \ / _` |/ _ \ '__|            
+          | |____| | | | (_| | | | | (_| |  __/ |               
+           \_____|_| |_|\__,_|_| |_|\__, |\___|_|               
+                                     __/ |                      
+                                    |___/                       
+
+'''
+print("\033[92m" + ascii_art + "\033[0m")
 options = get_arguments()
 current_mac = get_current_mac(options.interface)
 print("Current MAC = " + str(current_mac))
